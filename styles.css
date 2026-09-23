@@ -1,0 +1,179 @@
+:root {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-color: #f8fafc;
+  --border-color: #334155;
+  --btn-blue: #3b82f6;
+  --btn-red: #ef4444;
+  --btn-green: #22c55e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.dark-theme {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 15px;
+}
+
+.app-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 15px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.main-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.card-title {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+/* Histograma de FPS */
+.histogram-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 90px;
+  background-color: #090d16;
+  padding: 4px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar {
+  flex: 1;
+  background-color: #10b981;
+  min-width: 3px;
+  border-radius: 1px 1px 0 0;
+  transition: height 0.1s ease;
+}
+
+.bar.low-fps {
+  background-color: #ef4444;
+}
+
+/* Barra de Memoria */
+.memory-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+.memory-bar-bg {
+  width: 100%;
+  height: 14px;
+  background-color: #090d16;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.memory-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #22c55e 0%, #eab308 70%, #ef4444 100%);
+  transition: width 0.3s ease;
+}
+
+/* Botones de Control */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-blue { background-color: var(--btn-blue); }
+.btn-red { background-color: var(--btn-red); }
+.btn-green { background-color: var(--btn-green); }
+
+/* Consola de Logs Interna */
+.console-card {
+  height: 140px;
+  background-color: #090d16;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.82rem;
+  overflow-y: auto;
+}
+
+.console-output {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.log-entry {
+  display: flex;
+  gap: 8px;
+}
+
+.log-time { color: #64748b; }
+.log-info { color: #38bdf8; }
+.log-warn { color: #facc15; }
+.log-error { color: #f87171; }
+.log-success { color: #4ade80; }
+
+/* Canvas */
+canvas {
+  width: 100%;
+  height: 100px;
+  background-color: #090d16;
+  border-radius: 4px;
+}
+
+/* Sidebar */
+.sidebar-panel {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.sidebar-title {
+  font-size: 0.9rem;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.code-preview {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #a7f3d0;
+  white-space: pre-wrap;
+  word-break: break-all;
+}

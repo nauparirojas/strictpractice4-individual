@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica Calificada 04 - UNCP</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Carga diferida obligatoria sin librerías externas -->
+  <script src="app.js" defer></script>
+</head>
+<body class="dark-theme">
+  <div class="app-layout">
+    <!-- Panel Principal -->
+    <main class="main-panel">
+      <!-- Histograma de FPS en Tiempo Real -->
+      <section class="card">
+        <h2 class="card-title">HISTORIAL DE FPS EN TIEMPO REAL (HISTOGRAMA)</h2>
+        <div id="fpsHistogram" class="histogram-container"></div>
+      </section>
+
+      <!-- Indicador de Memoria Heap -->
+      <section class="card">
+        <div class="memory-header">
+          <span>Uso de Memoria Heap</span>
+          <span id="memoryValueText">35%</span>
+        </div>
+        <div class="memory-bar-bg">
+          <div id="memoryBarFill" class="memory-bar-fill" style="width: 35%;"></div>
+        </div>
+      </section>
+
+      <!-- Botones de Control de Rendimiento -->
+      <section class="button-grid">
+        <button id="perfBtn" class="btn btn-blue">Analizar Rendimiento</button>
+        <button id="leakBtn" class="btn btn-red">Simular Memory Leak</button>
+        <button id="cleanBtn" class="btn btn-green">Limpiar Memoria</button>
+      </section>
+
+      <!-- Consola de Logs Interna -->
+      <section class="card console-card">
+        <div id="consoleLog" class="console-output"></div>
+      </section>
+
+      <!-- Canvas para la AnimaciónInteractiva -->
+      <section class="card canvas-card">
+        <canvas id="animationCanvas" width="600" height="150"></canvas>
+      </section>
+    </main>
+
+    <!-- Panel Lateral: Referencia de Código en Vivo -->
+    <aside class="sidebar-panel">
+      <h3 class="sidebar-title">Código en Vivo</h3>
+      <pre class="code-preview"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+  &lt;script src="app.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="mainApp"&gt;
+    &lt;canvas id="animationCanvas"&gt;&lt;/canvas&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </aside>
+  </div>
+</body>
+</html>
